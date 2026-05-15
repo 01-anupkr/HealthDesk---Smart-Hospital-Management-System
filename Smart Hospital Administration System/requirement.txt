@@ -1,0 +1,108 @@
+HealthDesk - Smart Hospital Administration System
+Cross-Platform Requirements and Setup Guide
+
+1) Project Type
+- Java Web Application (Servlet + JSP)
+- Build tool: Maven
+- Database: MySQL 8+
+- Server runtime: Tomcat via Maven plugin (tomcat7:run)
+
+2) Minimum Software Requirements
+- Java JDK: 17 or above
+- Maven: 3.9+
+- MySQL Server: 8+
+- MySQL Client CLI: mysql
+- OS: macOS / Linux / Windows
+
+3) Java and Servlet Compatibility in this Project
+- This codebase is configured with javax.servlet-api 3.1
+- Maven plugin used: tomcat7-maven-plugin
+- Keep current compatibility unless you explicitly migrate to newer Tomcat/Jakarta
+
+4) Dependency Information (from pom.xml)
+- javax.servlet:javax.servlet-api:3.1.0 (scope provided)
+- com.mysql:mysql-connector-j:8.4.0
+- org.slf4j:slf4j-simple:2.0.13
+
+5) Install on macOS
+- Install Homebrew (if not installed):
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+- Install packages:
+  brew install openjdk maven mysql
+- Start MySQL:
+  brew services start mysql
+
+6) Install on Linux (Ubuntu/Debian)
+- Update package index:
+  sudo apt update
+- Install Java, Maven, MySQL:
+  sudo apt install -y openjdk-17-jdk maven mysql-server mysql-client
+- Start and enable MySQL:
+  sudo systemctl enable mysql
+  sudo systemctl start mysql
+
+7) Install on Windows
+- Recommended package managers:
+  Option A (winget):
+  winget install EclipseAdoptium.Temurin.21.JDK
+  winget install Apache.Maven
+  winget install Oracle.MySQL
+
+  Option B (manual):
+  - Install JDK 17+ (Temurin recommended)
+  - Install Maven 3.9+
+  - Install MySQL 8+
+
+- Ensure PATH contains:
+  - java
+  - mvn
+  - mysql
+
+8) Verify Installation (all OS)
+- java -version
+- mvn -v
+- mysql --version
+
+9) Project Setup
+- Go to project root folder.
+- Create database and tables:
+  mysql -uroot < database/schema.sql
+- Load demo data (optional but recommended):
+  mysql -uroot < database/demo-seed.sql
+
+10) Database Credentials Used by App
+- File: src/main/webapp/WEB-INF/web.xml
+- Default local values in this repo:
+  dbUrl=jdbc:mysql://localhost:3306/healthdesk?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+  dbUser=root
+  dbPassword=(empty)
+
+- If your MySQL uses a password, set dbPassword accordingly.
+
+11) Build and Run
+- Build:
+  mvn clean package
+- Run app:
+  mvn tomcat7:run
+- Open in browser:
+  http://localhost:8080/healthdesk
+
+12) Demo Login Credentials
+- Admin: admin / admin123
+- Doctor 1: doctor1 / doc12345
+- Doctor 2: doctor2 / doc22345
+- Doctor 3: doctor3 / doc32345
+- Patient 1: patient1 / pat12345
+- Patient 2: patient2 / pat22345
+- Patient 3: patient3 / pat32345
+- Patient 4: patient4 / pat42345
+
+13) Troubleshooting
+- If mvn not found:
+  Reinstall Maven and reopen terminal.
+- If MySQL access denied:
+  Update dbUser/dbPassword in src/main/webapp/WEB-INF/web.xml to match your local MySQL account.
+- If port 8080 busy:
+  Stop process using 8080, or change port in pom.xml under tomcat7-maven-plugin.
+- If app starts but login fails:
+  Ensure schema.sql executed successfully and admin/demo users exist.

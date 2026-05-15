@@ -1,0 +1,12 @@
+0:0:0:0:0:0:0:1 - - [05/May/2026:09:34:59 +0530] "GET /healthdesk HTTP/1.1" 302 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [05/May/2026:09:35:00 +0530] "GET /healthdesk/ HTTP/1.1" 200 2295 http-bio-8080-exec-2 307
+0:0:0:0:0:0:0:1 - - [05/May/2026:09:35:00 +0530] "GET /service-worker.js HTTP/1.1" 404 - http-bio-8080-exec-3 0
+0:0:0:0:0:0:0:1 - - [05/May/2026:09:35:01 +0530] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 - http-bio-8080-exec-5 0
+0:0:0:0:0:0:0:1 - - [05/May/2026:09:35:01 +0530] "GET /apple-touch-icon.png HTTP/1.1" 404 - http-bio-8080-exec-6 0
+0:0:0:0:0:0:0:1 - - [05/May/2026:09:35:01 +0530] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-7 0
+0:0:0:0:0:0:0:1 - - [05/May/2026:11:18:11 +0530] "GET /healthdesk HTTP/1.1" 302 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [05/May/2026:11:18:11 +0530] "GET /healthdesk/ HTTP/1.1" 200 2295 http-bio-8080-exec-1 5
+0:0:0:0:0:0:0:1 - - [05/May/2026:11:18:11 +0530] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 - http-bio-8080-exec-5 0
+0:0:0:0:0:0:0:1 - - [05/May/2026:11:18:11 +0530] "GET /apple-touch-icon.png HTTP/1.1" 404 - http-bio-8080-exec-6 0
+0:0:0:0:0:0:0:1 - - [05/May/2026:11:18:11 +0530] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-7 0
+0:0:0:0:0:0:0:1 - - [05/May/2026:11:18:12 +0530] "GET /service-worker.js HTTP/1.1" 404 - http-bio-8080-exec-1 0

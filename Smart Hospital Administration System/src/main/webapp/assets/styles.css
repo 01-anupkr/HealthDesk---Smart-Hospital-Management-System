@@ -1,0 +1,200 @@
+:root {
+    --bg: #f4f8f7;
+    --panel: #ffffff;
+    --line: #dbe7e4;
+    --text: #17221f;
+    --muted: #5f726c;
+    --primary: #0f766e;
+    --primary-strong: #115e59;
+    --danger: #c0392b;
+    --ok: #1f8f4f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    background: radial-gradient(circle at 10% 10%, #d7eee9, transparent 35%),
+                radial-gradient(circle at 85% 20%, #e1f2df, transparent 30%),
+                var(--bg);
+    font-family: "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.hero-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: linear-gradient(120deg, rgba(15, 118, 110, 0.04), rgba(72, 187, 120, 0.04));
+}
+
+.shell {
+    width: min(1150px, 94%);
+    margin: 24px auto 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.auth-shell {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 20px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+.wide {
+    overflow-x: auto;
+}
+
+h1, h2 {
+    margin: 0 0 12px;
+}
+
+p, li, label, input, textarea, select, button, span {
+    font-size: 14px;
+}
+
+.topbar {
+    padding: 16px 3%;
+    background: #ffffffd9;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(6px);
+}
+
+.topbar h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+form {
+    display: grid;
+    gap: 8px;
+}
+
+input, textarea, select {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 9px 10px;
+    background: #fff;
+}
+
+button {
+    border: 0;
+    border-radius: 10px;
+    padding: 9px 12px;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--primary-strong);
+}
+
+.secondary {
+    background: #4b5563;
+}
+
+.inline-form {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.row-form {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    padding: 10px;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+th {
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.badge {
+    background: #e7f8f4;
+    border: 1px solid #b9e9df;
+    color: #0b645e;
+    border-radius: 999px;
+    padding: 4px 8px;
+    display: inline-block;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.stats div {
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.stats strong {
+    display: block;
+    font-size: 24px;
+}
+
+.stats span {
+    color: var(--muted);
+}
+
+.error {
+    color: var(--danger);
+}
+
+.success {
+    color: var(--ok);
+}
+
+@media (max-width: 900px) {
+    .auth-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .row-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+    }
+}
